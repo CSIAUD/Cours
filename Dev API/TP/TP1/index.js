@@ -3,7 +3,9 @@ const app = express();
 const port = 8080;
 
 app.get('/hello', (req, res) => {
-    res.send('Hello World!')
+    let result = 'Hello World!';
+    res.setHeader('Content-Type', 'text/plain');
+    res.status(200).send(String(result));
 })
 
 app.get('/calc', (req, res) => {
