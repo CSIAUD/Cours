@@ -242,7 +242,7 @@ Fonctionnement client-serveur, sécurisation par :
 - Intégrité des données échangées
 - Authentification du client souvent assurée par la couche applicative (Optionnel)
 
-Mise en oeuvre falité car juste à "ajouter" le SSL/TLS pour passer de HTTP à HTTPS
+Mise en oeuvre facilitée car juste à "ajouter" le SSL/TLS pour passer de HTTP à HTTPS
 
 mTLS => mutual TLS
 
