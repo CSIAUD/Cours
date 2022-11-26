@@ -51,12 +51,12 @@ En prennant exemple sur la comande `mysqld_multi --example` je crée le fichier 
 ```bash
 [mysqld1]
 user = mysql
-pid-file = /var/lib/mysql/mysqldi.pid
-socket = /var/lib/mysql1/mysqldı.sock
+pid-file = /var/lib/mysql/mysqld1.pid
+socket = /var/lib/mysql1/mysqld1.sock
 port = 3307
-datadir = /var/lib/mysqli
+datadir = /var/lib/mysql1
 tmpdir = /tmp
-log-error = /var/log/mysqldi.log
+log-error = /var/log/mysqld1.log
 
 [mysqld2]
 user = mysql
@@ -79,7 +79,7 @@ log-error = /var/log/mysqld3.log
 [mysqld4]
 user = mysql
 pid-file = /var/lib/mysql/mysqld4.pid
-socket = /var/lib/mysql/mysql.sock
+socket = /var/lib/mysql/mysql4.sock
 port = 3310
 datadir = /var/lib/mysql4
 tmpdir = /tmp
