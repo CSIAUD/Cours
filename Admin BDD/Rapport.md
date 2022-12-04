@@ -44,8 +44,8 @@ binlog-format=mixed
 
 Cration d'un utilisateur pour la réplication (depuis le mysql général) :
 ```SQL
-CREATE USER 'replication_user'@'%' IDENTIFIED BY 'bigs3cret';
-GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';
+CREATE USER 'replication_user'@'localhost' IDENTIFIED BY 'bigs3cret';
+GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'localhost';
 ```
 
 Récupération de la position du binary log du master :
@@ -57,7 +57,7 @@ SHOW MASTER STATUS;
 +--------------------+----------+--------------+------------------+
 | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
 +--------------------+----------+--------------+------------------+
-| master1-bin.000001 |      330 |              |                  |
+| master1-bin.000004 |      702 |              |                  |
 +--------------------+----------+--------------+------------------+
 1 row in set (0.000 sec)
 
@@ -65,31 +65,26 @@ SHOW MASTER STATUS;
 
 exécution de `UNLOCK TABLES` pour libérer l'utilisation de la BDD.
 
-### Mariadb Backup
+### Allumage du Slave
 
-install :
-```bash
-apt-get install mariadb-backup
+```sql
+
+CHANGE MASTER TO
+  MASTER_HOST='localhost',
+  MASTER_USER='replication_user',
+  MASTER_PASSWORD='bigs3cret',
+  MASTER_PORT=3307,
+  MASTER_LOG_FILE='master1-bin.000004',
+  MASTER_LOG_POS=702,
+  MASTER_CONNECT_RETRY=10;
+
+START SLAVE;
+
+SHOW SLAVE STATUS \G
 ```
 
-Accord des droits à localhost
-```SQL
-GRANT RELOAD, PROCESS, BINLOG MONITOR ON *.* TO ``@`localhost`;
-```
-
-création du dump
+Résultat :
 ```bash
-mariabackup --backup --target-dir=/var/mariadb/backup/ --socket=/var/lib/mysql1/mysql1.sock
-```
-Résultat de `ls /var/mariadb/backup/` :
-```bash
-aria_log.00000001  ibdata1             siaud                   xtrabackup_info
-aria_log_control   ib_logfile0         test
-backup-my.cnf      mysql               xtrabackup_binlog_info
-ib_buffer_pool     performance_schema  xtrabackup_checkpoints
-```
-
-Préparation du backup :
-```bash
-mariabackup --prepare --target-dir=/var/mariadb/backup/
+Slave_IO_Running: Yes
+Slave_SQL_Running: Yes
 ```

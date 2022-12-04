@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "a7b14800-fdcf-475f-8f25-dea510409739",
+		"name": "devMobile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13293443"
+	},
+	"item": [
+		{
+			"name": "ingredient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"miel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-ingredients",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-ingredients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ingredients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-ingredients",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-ingredients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ingredient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-ingredients/1",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-ingredients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ingredient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"oignon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-ingredients/1",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-ingredients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ingredient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-ingredients/1",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-ingredients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pizza",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Chèvre-Miel\",\r\n    \"toppings\": [\r\n        3,\r\n        4\r\n    ],\r\n    \"description\": \"Du chèvre du miel, la folie !\",\r\n    \"image\": \"https://images.unsplash.com/photo-1513104890138-7c749659a591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODIzNzB8MHwxfHNlYXJjaHwxfHxwaXp6YXxlbnwwfHx8fDE2Njk2MzAwMDU&ixlib=rb-4.0.3&q=80&w=400\",\r\n    \"price\": 12.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-pizzas",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-pizzas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pizzas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-pizzas",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-pizzas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pizza",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-pizzas/1",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-pizzas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pizza",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Chèvre-Miel\",\r\n    \"toppings\": [\r\n        3,\r\n        4\r\n    ],\r\n    \"description\": \"Du chèvre du miel, la folie !\",\r\n    \"image\": \"https://images.unsplash.com/photo-1513104890138-7c749659a591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODIzNzB8MHwxfHNlYXJjaHwxfHxwaXp6YXxlbnwwfHx8fDE2Njk2MzAwMDU&ixlib=rb-4.0.3&q=80&w=400\",\r\n    \"price\": 12.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-pizzas/1",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-pizzas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pizza",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://ynov.jcatania.io/ks-pizzas/1",
+					"protocol": "https",
+					"host": [
+						"ynov",
+						"jcatania",
+						"io"
+					],
+					"path": [
+						"ks-pizzas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
